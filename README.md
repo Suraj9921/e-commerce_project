@@ -35,11 +35,9 @@ This project is a complete shopping website developed using **Java, Spring Boot,
 ## Screenshots
 ### Admin Application
 ![Admin Dashboard](path/to/admin_screenshot.png)
-*Admin dashboard showing user and product management features.*
 
 ### Shopping Application
 ![Shopping Homepage](path/to/shopping_screenshot.png)
-*Homepage of the shopping application displaying product categories.*
 
 ## Video Demonstration
 Watch the video demonstration of the project on YouTube: [Project Video](https://www.youtube.com/your-video-link)
