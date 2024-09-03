@@ -60,7 +60,7 @@ This project is a complete shopping website developed using **Java, Spring Boot,
 ![Screenshot (190)](https://github.com/user-attachments/assets/ef06d7f9-764f-434a-96fe-1e0917290d49)
 
 ## Video Demonstration
-Watch the video demonstration of the project on YouTube: [Project Video](https://www.youtube.com/your-video-link)
+Watch the video demonstration of the project on YouTube: [Project Video](https://youtu.be/9fysGxpPmuY)
 
 ## Conclusion
 This shopping website project showcases how to integrate various technologies to create a professional and user-friendly e-commerce application. It aims to provide a seamless experience for users while delivering a robust backend for administrators.
