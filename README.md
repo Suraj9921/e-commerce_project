@@ -47,7 +47,17 @@ This project is a complete shopping website developed using **Java, Spring Boot,
 ![Screenshot (176)](https://github.com/user-attachments/assets/c50455fa-f65e-4abd-873b-2f19ed83740a)
 
 ### Shopping Application
-![Shopping Homepage](path/to/shopping_screenshot.png)
+![Screenshot (179)](https://github.com/user-attachments/assets/d7fcb686-ac45-4227-ad83-1586f8f31e43)
+![Screenshot (180)](https://github.com/user-attachments/assets/acbebbd5-bf94-4bbe-9ee6-fa6dd3c3947e)
+![Screenshot (182)](https://github.com/user-attachments/assets/7ce1e3ef-26df-4808-96e7-cba460a7f937)
+![Screenshot (183)](https://github.com/user-attachments/assets/c3b62ec2-1d00-4fa9-bb38-9a395b7164e9)
+![Screenshot (184)](https://github.com/user-attachments/assets/c78247c6-d921-4c11-9f40-51db973f2d17)
+![Screenshot (185)](https://github.com/user-attachments/assets/c664bf4e-f66a-4c72-9d4f-6168b892417c)
+![Screenshot (186)](https://github.com/user-attachments/assets/c3e4790a-31bd-480b-a4eb-4df091d6518a)
+![Screenshot (187)](https://github.com/user-attachments/assets/fe15fa95-9eaa-494d-aee1-9585a3d58d0b)
+![Screenshot (188)](https://github.com/user-attachments/assets/d89483fb-f97e-4e78-b93f-e7c6d5bff64b)
+![Screenshot (189)](https://github.com/user-attachments/assets/0fc13b19-da69-49bc-851e-c0a70d8b8baa)
+![Screenshot (190)](https://github.com/user-attachments/assets/ef06d7f9-764f-434a-96fe-1e0917290d49)
 
 ## Video Demonstration
 Watch the video demonstration of the project on YouTube: [Project Video](https://www.youtube.com/your-video-link)
