@@ -34,7 +34,9 @@ This project is a complete shopping website developed using **Java, Spring Boot,
 
 ## Screenshots
 ### Admin Application
-![Admin Dashboard](path/to/admin_screenshot.png)
+![Screenshot (165)](https://github.com/user-attachments/assets/5eaef55f-003d-4b49-b3e6-6d27d76def21)
+![Screenshot (166)](https://github.com/user-attachments/assets/82197908-19ff-43dd-a28c-9ee354423520)
+![Screenshot (168)](https://github.com/user-attachments/assets/4a8a5ca2-cc84-49f9-92b6-fc58112d8e60)
 
 ### Shopping Application
 ![Shopping Homepage](path/to/shopping_screenshot.png)
