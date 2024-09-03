@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      lang="">
+<head th:replace="fragments :: page_head('403 Forbidden - Shopme','none')">
+    <title>403 Forbidden</title>
+</head>
+<body class="bg-light">
+<div class="container-scroller">
+    <div th:replace="navigation :: header_menu"></div>
+
+    <div class="container-fluid page-body-wrapper full-page-wrapper d-flex justify-content-center align-items-center" style="padding: 2rem; margin: 0 -1rem;">
+        <div class="content-wrapper text-center">
+            <div class="error-container mx-auto shadow rounded p-5">
+                <h1 class="display-1 mb-4 text-danger">403</h1>
+                <p class="text-muted font-weight-light">You are not authorized to access this page.</p>
+                <a class="btn btn-primary mt-4" th:href="@{/login}">Go to Login</a>
+
+                <div class="mt-5">
+                    <p class="text-muted">If you believe this is a mistake, please contact the website administrator.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+</body>
+
+</html>

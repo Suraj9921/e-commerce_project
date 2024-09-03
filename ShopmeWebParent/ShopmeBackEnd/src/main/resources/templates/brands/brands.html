@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments :: page_head('Brands - Shopme Admin', 'none')">
+<body>
+    <div class="container-fluid">
+        <div th:replace="navigation :: menu"></div>
+        <div class="text-center">
+            <h1 class="mt-3 mb-3">Manage Brands</h1>
+            <a th:href="@{/brands/new}" class="fas fa-user-plus fa-2x icon-dark mr-2"
+               style="text-decoration: none; font-size: 25px;"></a>
+            &nbsp;&nbsp;
+            <a th:href="@{/brands/export/csv}" class="fas fa-file-csv fa-2x icon-dark mr-2"
+               style="text-decoration: none; font-size: 25px;"></a>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <form th:action="@{'/brands/page/1'}" class="form-inline m-3">
+                    <input type="hidden" name="sortField" th:value="${sortField}" />
+                    <input type="hidden" name="sortDir" th:value="${sortDir}" />
+
+                    Filter:&nbsp;
+                    <input type="search" name="keyword" th:value="${keyword}" class="form-control" required /> &nbsp;&nbsp;
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    &nbsp;&nbsp;
+
+                    <button type="button" class="btn btn-secondary"	onclick="clearFilter()">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div th:if="${message != null}" class="alert alert-success text-center mt-3">
+                [[${message}]]
+            </div>
+        </div>
+
+        <div>
+            <table class="table table-bordered table-striped table-hover table-responsive-xl mt-3 container text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Brand ID</th>
+                        <th>Logo</th>
+                        <th>
+                            <a class="text-white"
+                               th:href="@{'/brands/page/' + ${currentPage} + '?sortField=name&sortDir=' + ${sortField != 'name' ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">
+                                Brand Name
+                            </a>
+                            <span th:if="${sortField == 'name'}"
+                                  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
+                            </span>
+                        </th>
+                        <th>Categories</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="brand : ${listBrands}">
+                        <td class="align-middle">[[${brand.id}]]</td>
+                        <td class="align-middle">
+                            <img th:src="@{${brand.logoPath}}" style="width: 100px" class="img-fluid" />
+                        </td>
+                        <td class="align-middle">[[${brand.name}]]</td>
+                        <td class="align-middle">
+                            <th:block th:each="cat : ${brand.categories}">
+                                <span class="badge badge-secondary" th:text="${cat.name}"></span>
+                            </th:block>
+                        </td>
+
+                        <td class="align-middle">
+                            <a class="fas fa-edit fa-2x icon-green" th:href="@{/brands/edit/{id}(id=${brand.id})}" title="Edit the user"></a>
+                            &nbsp;
+                            <a class="fas fa-trash fa-2x icon-dark link-delete" th:href="@{/brands/delete/{id}(id=${brand.id})}" title="Delete the user"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center m-1" th:if="${totalItems > 0}">
+            <span>Showing brands # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+        </div>
+
+        <div class="text-center m-1" th:unless="${totalItems > 0}">
+            <span>No users found</span>
+        </div>
+
+        <div th:if="${totalPages > 1}">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                        <a th:replace="fragments :: page_link('/brands',1, 'First')"></a>
+                    </li>
+                    <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                        <a th:replace="fragments :: page_link('/brands',${currentPage - 1} , 'Previous')"></a>
+                    </li>
+                    <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
+                        th:each="i : ${#numbers.sequence(1, totalPages)}">
+                        <a th:replace="fragments :: page_link('/brands',${i}, ${i})"></a>
+                    </li>
+
+                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                        <a th:replace="fragments :: page_link('/brands',${currentPage + 1} , 'Next')"></a>
+                    </li>
+                    <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                        <a th:replace="fragments :: page_link('/brands',${totalPages} , 'Last')"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div th:replace="modal_fragments :: confirm_modal"></div>
+
+        <div th:replace="fragments :: footer"></div>
+    </div>
+    <script th:src="@{/js/common_list.js}"></script>
+    <script type="text/javascript">
+        moduleURL = "[[@{/brands}]]";
+
+        $(document).ready(function () {
+            $(".link-delete").on("click", function (e) {
+                e.preventDefault();
+                showDeleteConfirmModal($(this), 'brand');
+            });
+        });
+    </script>
+</body>
+</html>
